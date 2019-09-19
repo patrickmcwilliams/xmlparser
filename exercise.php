@@ -129,8 +129,13 @@ class XMLParser
 
 }
 
-
+/*
+*   RestaurantDataUtil
+*
+*   New Class to transform XMLParser object into properly formatted object
+*/
 class RestaurantDataUtil {
+    // Constant to map values to days
     const DAYS = array(
         "0" => "Sun",
         "1" => "Mon",
@@ -141,36 +146,44 @@ class RestaurantDataUtil {
         "6" => "Sat",
     );
 
+    /*
+    *   Prints restaurant data
+    *
+    *   @param array $restaurants data parsed from XML as array
+    *   @return void
+    */
     public static function printData($restaurants){
-        $transformedRestaurantData = self::transformRestaurantData($restaurants);
+        $transformedRestaurantData = array_map(function($data){
+            print_r($data);
+        },self::transformRestaurantData($restaurants));
 
     }
 
     private static function transformRestaurantData($restaurants){
-        foreach ($restaurants["response"]["data"] as $restaurant) {
+        $transformedRestaurantDataArray = array_map(function($restaurant){
             $id = $restaurant["biz_id"];
             $name = $restaurant["biz_name"];
-            $transformedSchedule = self::transormScheduleData($restaurant["schedule"]);
-
-        }
+            $transformedScheduleArray = self::transormScheduleData($restaurant["schedule"]);
+            return array("id" => $id, "name" => $name, "schedule" => $transformedScheduleArray);
+        }, $restaurants["response"]["data"]);
+        return $transformedRestaurantDataArray;
     }
 
     private static function transormScheduleData($schedule){
-        $transformedSchedule = array();
-        foreach ($schedule as $day) {
+
+         $transformedSchedule = array_map(function($day){
             $open = $day["open"];
             $close = $day["close"];
-            $openDay = self::DAYS[$open["day"]];
+            $day = self::DAYS[$open["day"]];
             $startTime = self::convertTime($open["time"]);
             $endTime = self::convertTime($close["time"]);
             $times = $startTime."-".$endTime;
-            if(count($transformedSchedule) >= 1){
-
-            }
-            else{
-                array_push($openDay.": ".$times);
-            }
-        }
+            $dayArray = array($day => $times);
+            return $dayArray;
+        
+        }, $schedule);
+        
+        return $transformedSchedule;
     }
 
     private static function convertTime($time){
