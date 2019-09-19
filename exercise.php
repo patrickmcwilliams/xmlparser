@@ -155,32 +155,58 @@ class RestaurantDataUtil {
     public static function printData($restaurants){
         $transformedRestaurantData = array_map(function($data){
             $flattenedSchedule = "";
+            $flattenedScheduleArray = array();
             $scheduleArray = array();
+            $lastDay = "";
+            $lastTime = "";
             foreach ($data["schedule"] as $day) {
                 $scheduleArray[key($day)] = $day[key($day)];
             };
-            $lastDay = "";
-            $lastTime = "";
-            foreach ($scheduleArray as $day => $time) {
-                if($flattenedSchedule == ""){
-                    $flattenedSchedule = $day.": ".$time;
-                }
-                elseif($time == $lastTime && self::DAYS[array_search($lastDay, self::DAYS)+1] == $day){
-                    $pattern = '/(.*?;?)([^;-]*)(?:[^;]*)(: [^;]+)$/';
-                    $replacement = '${1}${2}-'.$day.'$3';
-                    $flattenedSchedule = preg_replace($pattern, $replacement, $flattenedSchedule);
-                }
-                elseif($time == $lastTime && self::DAYS[array_search($lastDay, self::DAYS)+1] != $day){
-                    $pattern = '/(.*?;?)([^;,-]*)([^;]*)(: [^;]+)$/';
-                    $replacement = '${1}${2}${3}, '.$day.'$4';
-                    $flattenedSchedule = preg_replace($pattern, $replacement, $flattenedSchedule);
-                }
-                elseif($time != $lastTime){
-                    $flattenedSchedule .= "; ".$day.": ".$time;
-                }
-                $lastDay = $day;
-                $lastTime = $time;
-            }
+
+            $flattenedScheduleArray = array_map(function($times) use($scheduleArray){
+                $daysForTimes = array_keys($scheduleArray, $times);
+                $daySchedule = array_reduce($daysForTimes, function($out, $day){
+                    if($out["out"] == ""){
+                        $out["out"] = $day;
+                    }
+                    elseif(self::DAYS[array_search($out["last"], self::DAYS)+1] == $day){
+                        $pattern = '/^([^;-]*)(?:[^;]*)$/';
+                        $replacement = '$1-'.$day;
+                        $out["out"] = preg_replace($pattern, $replacement, $out["out"]);
+                    }
+                    else{
+                        $out["out"] .= ", ".$day;
+                    }
+                    $out["last"] = $day;
+                    return $out;
+                }, array("out"=>"","last"=>""));
+                return $scheduleString = $daySchedule["out"].": ".$times;
+
+            }, $scheduleArray);
+            
+            $flattenedSchedule = join("; ", array_unique($flattenedScheduleArray));
+
+            // foreach ($scheduleArray as $day => $time) {
+            //     if($flattenedSchedule == ""){
+            //         $flattenedSchedule = $day.": ".$time;
+            //     }
+            //     elseif($time == $lastTime && self::DAYS[array_search($lastDay, self::DAYS)+1] == $day){
+            //         $pattern = '/(.*?;?)([^;-]*)(?:[^;]*)(: [^;]+)$/';
+            //         $replacement = '${1}${2}-'.$day.'$3';
+            //         $flattenedSchedule = preg_replace($pattern, $replacement, $flattenedSchedule);
+            //     }
+            //     elseif($time == $lastTime && self::DAYS[array_search($lastDay, self::DAYS)+1] != $day){
+            //         $pattern = '/(.*?;?)([^;,-]*)([^;]*)(: [^;]+)$/';
+            //         $replacement = '${1}${2}${3}, '.$day.'$4';
+            //         $flattenedSchedule = preg_replace($pattern, $replacement, $flattenedSchedule);
+            //     }
+            //     elseif($time != $lastTime){
+            //         array_push($flattenedSchedule);
+                    
+            //     }
+            //     $lastDay = $day;
+            //     $lastTime = $time;
+            // }
             $outputString = "#".$data["id"].": ".$data["name"]." | ".$flattenedSchedule."\n";
             print_r($outputString);
         },self::transformRestaurantData($restaurants));
