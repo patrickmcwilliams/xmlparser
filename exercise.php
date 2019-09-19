@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * Class XMLParser
@@ -131,3 +131,5 @@ class XMLParser
 $xmlFile = file_get_contents("times.xml");
 $parser = new XMLParser($xmlFile);
 $restaurants = $parser->getOutput();
+
+?>
