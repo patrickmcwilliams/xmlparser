@@ -137,13 +137,13 @@ class XMLParser
 class RestaurantDataUtil {
     // Constant to map values to days
     const DAYS = array(
-        "0" => "Sun",
-        "1" => "Mon",
-        "2" => "Tues",
-        "3" => "Wed",
-        "4" => "Thur",
-        "5" => "Fri",
-        "6" => "Sat",
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
     );
 
     /*
@@ -154,7 +154,35 @@ class RestaurantDataUtil {
     */
     public static function printData($restaurants){
         $transformedRestaurantData = array_map(function($data){
-            print_r($data);
+            $flattenedSchedule = "";
+            $scheduleArray = array();
+            foreach ($data["schedule"] as $day) {
+                $scheduleArray[key($day)] = $day[key($day)];
+            };
+            $lastDay = "";
+            $lastTime = "";
+            foreach ($scheduleArray as $day => $time) {
+                if($flattenedSchedule == ""){
+                    $flattenedSchedule = $day.": ".$time;
+                }
+                elseif($time == $lastTime && self::DAYS[array_search($lastDay, self::DAYS)+1] == $day){
+                    $pattern = '/(.*?;?)([^;-]*)(?:[^;]*)(: [^;]+)$/';
+                    $replacement = '${1}${2}-'.$day.'$3';
+                    $flattenedSchedule = preg_replace($pattern, $replacement, $flattenedSchedule);
+                }
+                elseif($time == $lastTime && self::DAYS[array_search($lastDay, self::DAYS)+1] != $day){
+                    $pattern = '/(.*?;?)([^;,-]*)([^;]*)(: [^;]+)$/';
+                    $replacement = '${1}${2}${3}, '.$day.'$4';
+                    $flattenedSchedule = preg_replace($pattern, $replacement, $flattenedSchedule);
+                }
+                elseif($time != $lastTime){
+                    $flattenedSchedule .= "; ".$day.": ".$time;
+                }
+                $lastDay = $day;
+                $lastTime = $time;
+            }
+            $outputString = "#".$data["id"].": ".$data["name"]." | ".$flattenedSchedule."\n";
+            print_r($outputString);
         },self::transformRestaurantData($restaurants));
 
     }
@@ -174,7 +202,7 @@ class RestaurantDataUtil {
          $transformedSchedule = array_map(function($day){
             $open = $day["open"];
             $close = $day["close"];
-            $day = self::DAYS[$open["day"]];
+            $day = self::DAYS[intval($open["day"])];
             $startTime = self::convertTime($open["time"]);
             $endTime = self::convertTime($close["time"]);
             $times = $startTime."-".$endTime;
@@ -187,7 +215,7 @@ class RestaurantDataUtil {
     }
 
     private static function convertTime($time){
-        return date('h:ia', strtotime($time));
+        return preg_replace("/^0|:00/", "", date('h:ia', strtotime($time)));
     }
 }
 
