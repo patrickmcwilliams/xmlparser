@@ -1,0 +1,91 @@
+#18385: La Palapa, Mexican Gourmet Kitchen | Sun, Tue-Thu: 11am-9pm; Fri-Sat: 11am-11pm
+#15201: Fat Head's Pittsburgh | Sun-Thu: 11am-11pm; Fri-Sat: 11am-12am
+#111080: Carmella's Plates & Pints | Sun, Sat: 11am-2am; Mon-Fri: 4pm-2am
+#14774: Local | Sun, Sat: 10am-2am; Mon-Fri: 11am-2am
+#15203: Waffles INCaffeinated 2517 | Sun, Sat: 8am-3pm; Mon-Fri: 8am-2pm
+#183: Hofbrauhaus Pittsburgh | Sun: 12pm-12am; Mon-Wed: 11am-12am; Thu: 11am-1am; Fri-Sat: 11am-2am
+#15237: Claddagh Irish Pub | Sun-Wed: 11am-1am; Thu: 11am-9pm; Fri-Sat: 11am-2am
+#16354: Emporio at Sienna Mercato | Sun-Sat: 11am-12am
+#19663: Mezzo at Sienna Mercato | Sun: 4pm-10pm; Mon-Thu: 11am-2pm & 5pm-10pm; Fri: 11am-2pm & 5pm-11pm; Sat: 4pm-11pm
+#1135: Sharp Edge Bistro | Sun-Thu: 11am-12am; Fri-Sat: 11am-1am
+#14418: Marty's Market | Sun, Sat: 9am-3pm; Mon-Fri: 8am-3pm
+#15888: Pamela's Oakland | Sun-Sat: 7:30am-4pm
+#112828: Cioppino | Mon-Thu: 4pm-11pm; Fri-Sat: 4pm-12am
+#15224: Fuel and Fuddle | Sun-Sat: 11am-2am
+#112827: Osteria 2350 | Mon-Thu: 11am-9pm; Fri: 11am-10pm; Sat: 12pm-10pm
+#15240: Diamond Market | Sun-Sat: 11am-10pm
+#14561: The Porch | Sun: 10am-9pm; Mon-Fri: 11am-11pm; Sat: 10am-11pm
+#1109: Houlihan's Station Square | Sun-Thu: 11am-10pm; Fri-Sat: 11am-12:30am
+#12812: Shiloh Grill | Sun: 10am-11pm; Mon-Thu: 11:30am-11pm; Fri-Sat: 11:30am-1am
+#14605: McFadden's | Sun-Sat: 11am-2am
+#14792: Rivertowne | Sun-Sat: 11am-2am
+#15217: Church Brew Works | Sun: 12pm-9pm; Mon-Thu: 11:30am-11pm; Fri-Sat: 11:30am-12am
+#11051: Jerome Bettis Grille 36 | Sun-Thu: 11am-10pm; Fri-Sat: 11am-12am
+#13111: Bigham Tavern | Sun-Sat: 11am-2am
+#15233: Shady Grove | Sun-Sat: 11am-2am
+#1512: Mercurio's | Sun-Mon: 1pm-9pm; Tue-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#113334: Tipsy Cow | Sun: 11am-11pm; Mon-Wed: 4pm-11pm; Thu-Fri: 4pm-2am; Sat: 11am-2am
+#16405: Gus's | Sun-Sat: 11am-11pm
+#110: Harris Grill | Sun: 10am-2am; Mon-Sat: 11:30am-2am
+#16930: Salt of the Earth | Mon-Wed: 5pm-11pm; Thu-Sat: 5pm-12am
+#119: BRGR | Sun: 11:30am-9pm; Mon-Thu: 11:30am-11pm; Fri-Sat: 11:30am-12am
+#14789: Social at Bakery Square | Sun-Thu: 11am-12am; Fri: 11am-2am; Sat: 11am-1am
+#1194: TGIF Waterfront | Sun: 11am-11pm; Mon-Thu: 11am-12am; Fri-Sat: 11am-1am
+#17787: Burgatory | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#1110: D's Six Pax & Dogz | Sun-Wed: 11am-11pm; Thu-Sat: 11am-12am
+#19377: Monte Cello's - Ross | Sun: 12pm-10pm; Mon-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#111195: Rico's Restaurant | Mon-Thu: 11:30am-3pm & 3:30pm-10pm; Fri-Sat: 11:30am-3pm & 3:30pm-11pm
+#111918: Chili's | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#140: Burgatory | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#1166: Mad Mex South Hills | Sun: 11am-10pm; Mon-Thu: 11am-11pm; Fri-Sat: 11am-12am
+#111243: La Cappella | Sun: 12pm-9pm; Mon: 11am-9pm; Tue-Fri: 11am-10pm; Sat: 12pm-10pm
+#111602: Applebee's West Mifflin | Sun-Thu: 11am-12am; Fri-Sat: 11am-1am
+#111916: Chili's | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#110050: BRGR South Hills | Sun: 11:30am-9pm; Mon-Thu: 11:30am-11pm; Fri-Sat: 11:30am-12am
+#15041: Primanti Bros. Mt. Lebanon | Sun: 11am-12am; Mon-Sat: 11am-2am
+#111917: Chili's | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#19463: Rumfish Grille | Sun-Sat: 11am-12am
+#1119: TGIF North HIlls | Sun: 11am-11pm; Mon-Thu: 11am-12am; Fri-Sat: 11am-1am
+#14373: First Watch Settlers Ridge | Sun-Sat: 7am-2:30pm
+#111557: Applebees Robinson | Sun-Thu: 11am-12am; Fri-Sat: 11am-1am
+#110060: TGIFriday's Robinson | Sun: 11am-11pm; Mon-Thu: 11am-12am; Fri-Sat: 11am-1am
+#13066: TGIF Monroeville | Sun: 11am-11pm; Mon-Thu: 11am-12am; Fri-Sat: 11am-1am
+#14511: Primanti Bros. Harmarville | Sun: 11am-12am; Mon-Sat: 11am-2am
+#11218: Burgatory | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#15212: Bocktown Robinson | Sun-Sat: 11am-12am
+#1104: Franklin Inn | Mon-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#15823: Rivertowne Monroeville | Sun-Sat: 11am-2am
+#15660: OTB at the Boathouse | Sun-Sat: 8am-10pm
+#19378: Monte Cello's - Wexford | Sun: 12pm-10pm; Mon-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#110484: Mambo Italia - Sewickley | Sun: 3pm-8pm; Tue-Sat: 4pm-10pm
+#110620: Applebee's - Pittsburgh Mills | Sun-Thu: 11am-12am; Fri-Sat: 11am-1am
+#111913: Chili's | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#110311: Burgatory | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#16387: Aviva Brick Oven | Sun: 12pm-9pm; Mon-Thu: 11am-9pm; Fri: 11am-10pm; Sat: 12pm-10pm
+#19285: Osteria Pasqualino | Sun: 11am-9pm; Mon-Sat: 11am-10pm
+#1173: BRGR Cranberry | Sun: 11:30am-10pm; Mon-Thu: 11:30am-11pm; Fri-Sat: 11:30am-1am
+#14502: Primanti Bros. Cranberry | Sun: 11am-12am; Mon-Sat: 11am-2am
+#14232: First Watch - Cranberry | Sun-Sat: 7am-2:30pm
+#1216: Mad Mex Cranberry | Sun: 11am-10pm; Mon-Sat: 11am-12am
+#13150: TGIF Washington | Sun: 11am-11pm; Mon-Thu: 11am-12am; Fri-Sat: 11am-1am
+#13395: Fusion Washington | Sun, Sat: 12pm-10pm; Mon-Thu: 11:30am-2:30pm & 4pm-10pm; Fri: 4pm-11pm
+#111914: Chili's | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#1339: Texas Roadhouse Monaca | Sun: 11am-10pm; Mon-Thu: 3pm-10pm; Fri: 3pm-11pm; Sat: 12pm-10pm
+#16493: Waffles INCaffeinated 453 | Sun, Sat: 8am-3pm; Mon-Fri: 8am-2pm
+#11206: Mario's Woodfired Pizzeria | Mon-Fri: 11am-9pm; Sat: 12pm-9pm
+#111915: Chili's - Butler | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+#17387: Z Pub & Diner | Sun, Tue-Thu: 8am-10pm; Mon: 4pm-10pm; Fri-Sat: 8am-12am
+#1401: Texas Roadhouse Butler | Sun: 11am-9pm; Mon-Thu: 3pm-10pm; Fri-Sat: 11am-11pm
+#110291: Primanti Bros. Wheeling | Sun-Thu: 11am-12am; Fri-Sat: 11am-2am
+#15019: Fusion Triadelphia | Sun: 12pm-10pm; Mon-Thu: 11:30am-2:30pm & 4pm-10pm; Fri: 11:30am-2:30pm & 4pm-11pm; Sat: 11:30am-11pm
+#15038: Primanti Bros - Grove City | Sun: 11am-12am; Mon-Sat: 11am-2am
+#110209: Buffalo Wild Wings - St. Clairsville | Sun: 11am-12am; Mon-Thu: 11am-1am; Fri-Sat: 11am-2am
+#110218: Buffalo Wild Wings - Moundsville | Sun: 11am-12am; Mon-Thu: 11am-1am; Fri-Sat: 11am-2am
+#1382: Texas Roadhouse Morgantown | Sun: 11am-9pm; Mon-Thu: 3pm-10pm; Fri-Sat: 11am-11pm
+#111923: Chili's | Sun-Thu: 11am-11pm; Fri-Sat: 11am-12am
+#17087: Primanti Bros. - Morgantown | Sun: 11am-12am; Mon-Sat: 11am-2am
+#112697: Provoloni's Italian Grille | Sun: 11am-8pm; Mon: 4pm-9pm; Tue-Thu: 11am-9pm; Fri-Sat: 11am-10pm
+#1272: Oliverio's | Sun: 4pm-9pm; Mon-Sat: 4pm-10pm
+#13091: Mountain State Brewing Company | Sun: 12pm-9pm; Mon-Thu: 11am-9pm; Fri-Sat: 11am-10pm
+#111912: Chili's | Sun-Thu: 11am-10pm; Fri-Sat: 11am-11pm
+
