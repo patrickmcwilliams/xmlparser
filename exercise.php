@@ -22,9 +22,9 @@ class XMLParser
     private $output = array();
     private $status;
 
-    public function __construct($xml)
+    public function __construct($xmlFileNameLocation)
     {
-        $this->rawXML = $xml;
+        $this->rawXML = file_get_contents($xmlFileNameLocation);
         $this->parser = xml_parser_create();
 
         return $this->parse();
@@ -126,10 +126,60 @@ class XMLParser
     {
         return $this->output;
     }
+
 }
 
-$xmlFile = file_get_contents("times.xml");
-$parser = new XMLParser($xmlFile);
+
+class RestaurantDataUtil {
+    const DAYS = array(
+        "0" => "Sun",
+        "1" => "Mon",
+        "2" => "Tues",
+        "3" => "Wed",
+        "4" => "Thur",
+        "5" => "Fri",
+        "6" => "Sat",
+    );
+
+    public static function printData($restaurants){
+        $transformedRestaurantData = self::transformRestaurantData($restaurants);
+
+    }
+
+    private static function transformRestaurantData($restaurants){
+        foreach ($restaurants["response"]["data"] as $restaurant) {
+            $id = $restaurant["biz_id"];
+            $name = $restaurant["biz_name"];
+            $transformedSchedule = self::transormScheduleData($restaurant["schedule"]);
+
+        }
+    }
+
+    private static function transormScheduleData($schedule){
+        $transformedSchedule = array();
+        foreach ($schedule as $day) {
+            $open = $day["open"];
+            $close = $day["close"];
+            $openDay = self::DAYS[$open["day"]];
+            $startTime = self::convertTime($open["time"]);
+            $endTime = self::convertTime($close["time"]);
+            $times = $startTime."-".$endTime;
+            if(count($transformedSchedule) >= 1){
+
+            }
+            else{
+                array_push($openDay.": ".$times);
+            }
+        }
+    }
+
+    private static function convertTime($time){
+        return date('h:ia', strtotime($time));
+    }
+}
+
+$parser = new XMLParser("times.xml");
 $restaurants = $parser->getOutput();
+RestaurantDataUtil::printData($restaurants);
 
 ?>
