@@ -181,10 +181,12 @@ class RestaurantDataUtil {
             
             $flattenedSchedule = join("; ", array_unique($flattenedScheduleArray));
 
-            $outputString = "#".$data["id"].": ".$data["name"]." | ".$flattenedSchedule."\n";
+            $outputString = "#".$data["id"].": ".$data["name"]." | ".$flattenedSchedule;
             print_r($outputString);
+            return $outputString;
         },self::transformRestaurantData($restaurants));
-
+        $file = fopen("results.txt","w");
+        fwrite($file, join("\n", $transformedRestaurantData));
     }
 
     private static function transformRestaurantData($restaurants){
