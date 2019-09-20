@@ -152,50 +152,69 @@ class RestaurantDataUtil {
     *   @param array $restaurants data parsed from XML as array
     *   @return void
     */
-    public static function printData($restaurants){
+    public static function printData($restaurants, $outFile){
+        // Map data from transformed restaurant data to desired output
         $transformedRestaurantData = array_map(function($data){
             $flattenedSchedule = "";
             $flattenedScheduleArray = array();
             $scheduleArray = $data["schedule"];
 
+            // Map times from restaurant schedule to desired output
             $flattenedScheduleArray = array_map(function($times) use($scheduleArray){
+                // get matching days for each matching time slot
                 $daysForTimes = array_keys($scheduleArray, $times);
+                
+                // build schedule string by matching days and times
                 $daySchedule = array_reduce($daysForTimes, function($out, $day){
+                    // init return value
                     if($out["out"] == ""){
                         $out["out"] = $day;
                     }
+                    // if previous day matches current, replace last day for matching time slot
                     elseif(self::DAYS[array_search($out["last"], self::DAYS)+1] == $day){
                         $pattern = '/^([^;-]*)(?:[^;]*)$/';
                         $replacement = '$1-'.$day;
                         $out["out"] = preg_replace($pattern, $replacement, $out["out"]);
                     }
+                    // if prior day was not contiguous with current day, add new slot
                     else{
                         $out["out"] .= ", ".$day;
                     }
                     $out["last"] = $day;
                     return $out;
                 }, array("out"=>"","last"=>""));
+                
+                // build final day schedule string
                 return $scheduleString = $daySchedule["out"].": ".$times;
 
             }, $scheduleArray);
             
+            // build final restaurant schedule string
             $flattenedSchedule = join("; ", array_unique($flattenedScheduleArray));
-
             $outputString = "#".$data["id"].": ".$data["name"]." | ".$flattenedSchedule;
+
             print_r($outputString);
             return $outputString;
         },self::transformRestaurantData($restaurants));
-        $file = fopen("results.txt","w");
+
+        // write results to file
+        $file = fopen($outFile,"w");
         fwrite($file, join("\n", $transformedRestaurantData));
+        fclose($file);
     }
 
     private static function transformRestaurantData($restaurants){
+        // map data to desired output
         $transformedRestaurantDataArray = array_map(function($restaurant){
             $id = $restaurant["biz_id"];
             $name = $restaurant["biz_name"];
+            
+            // get transformed data for schedule
             $transformedScheduleArray = self::transormScheduleData($restaurant["schedule"]);
+
             return array("id" => $id, "name" => $name, "schedule" => $transformedScheduleArray);
         }, $restaurants["response"]["data"]);
+
         return $transformedRestaurantDataArray;
     }
 
@@ -213,6 +232,7 @@ class RestaurantDataUtil {
         
         }, $schedule);
 
+        // merge like days with split times
         foreach ($transformedSchedule as $day) {
             $key = key($day);
             $val = $day[key($day)];
@@ -233,6 +253,6 @@ class RestaurantDataUtil {
 
 $parser = new XMLParser("times.xml");
 $restaurants = $parser->getOutput();
-RestaurantDataUtil::printData($restaurants);
+RestaurantDataUtil::printData($restaurants, "results.txt");
 
 ?>
