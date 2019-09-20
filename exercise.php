@@ -1,44 +1,4 @@
 <?
-/**
- * Parse the file at times.xml and output the list of restaurants, one per line.
- * Each line must show restaurant id, name and the times that it is open.
- * Example:
- *
- * #110: Harris Grill | Sun: 10am-2am; Mon-Sat: 11:30am-2am
- *
- * However, the challenge is that the hours of operation should be "compressed"
- * as much as possible - example:
- *
- * Sun-Tue, Thu-Sat: 11am-12am; Wed: 11pm-12am
- *
- * instead of:
- *
- * Sun: 11am-12am
- * Mon: 11am-12am
- * Tue: 11am-12am
- * Wed: 11pm-12am
- * Thu: 11am-12am
- * Fri: 11am-12am
- * Sat: 11am-12am
- *
- * Here is how the output for some of the entries in the file must look like:
- * #8385: La Palapa, Mexican Gourmet | Sun, Tue-Thu: 11am-9pm; Fri-Sat: 11am-11pm
- * #5201: Fat Head's Pittsburgh | Sun-Thu: 11am-11pm; Fri-Sat: 11am-12am
- * [..]
- * #111195: Rico's Restaurant | Mon-Thu: 11:30am-3pm & 3:30pm-10pm; Fri-Sat: 11:30am-3pm & 3:30pm-11pm
- * [..]
- * #17387: Z Pub & Diner | Sun, Tue-Thu: 8am-10pm; Mon: 4pm-10pm; Fri-Sat: 8am-12am
- *
- * You can use ANY libraries/helpers/frameworks that you want, as long as they would not
- * prevent me from running the code (meaning - if the file has external dependancies,
- * make sure to include them).
- *
- * When you're complete, please email eric@lawnlove.com with your answer (or reply to the
- * Workable email--I assume it accepts attachments?). I'll run your solution through a
- * diff to see how it compares to the output_key.txt.
- *
- *
- */
 
 /**
  * Class XMLParser
